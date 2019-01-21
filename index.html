@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Carousel With Pure CSS</title>
+  </head>
+  <body>
+    <ul class="carousel">
+      <input
+        type="radio"
+        id="1"
+        name="activator"
+        checked="checked"
+        class="carousel__activator"
+      />
+      <input type="radio" id="2" name="activator" class="carousel__activator" />
+      <input type="radio" id="3" name="activator" class="carousel__activator" />
+      <div class="carousel__controls">
+        <label for="2" class="carousel__control carousel__control--forward"
+          ><span class="chevron left"></span
+        ></label>
+        <label for="3" class="carousel__control carousel__control--backward"
+          ><span class="chevron right"></span
+        ></label>
+      </div>
+      <div class="carousel__controls">
+        <label for="3" class="carousel__control carousel__control--forward"
+          ><span class="chevron left"></span
+        ></label>
+        <label for="1" class="carousel__control carousel__control--backward"
+          ><span class="chevron right"></span
+        ></label>
+      </div>
+      <div class="carousel__controls">
+        <label for="1" class="carousel__control carousel__control--forward"
+          ><span class="chevron left"></span
+        ></label>
+        <label for="2" class="carousel__control carousel__control--backward"
+          ><span class="chevron right"></span
+        ></label>
+      </div>
+      <li class="carousel__slide"></li>
+      <li class="carousel__slide"></li>
+      <li class="carousel__slide"></li>
+      <div class="carousel__indicators">
+        <label for="1" class="carousel__indicator"></label>
+        <label for="2" class="carousel__indicator"></label>
+        <label for="3" class="carousel__indicator"></label>
+      </div>
+    </ul>
+  </body>
+</html>

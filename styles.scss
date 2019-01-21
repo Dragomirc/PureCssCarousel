@@ -1,0 +1,110 @@
+.carousel__slide {
+  height: 200px;
+  width: 200px;
+
+  display: none;
+
+  margin: 0;
+  z-index: -1;
+}
+
+.carousel__controls {
+  display: none;
+}
+.carousel__activator {
+  display: none;
+}
+@for $i from 1 through 5 {
+  .carousel__activator:nth-of-type(#{$i}):checked
+    ~ .carousel__slide:nth-of-type(#{$i}) {
+    display: block;
+
+    animation: showSlide 0.5s;
+  }
+  .carousel__activator:nth-of-type(#{$i}):checked
+    ~ .carousel__controls:nth-of-type(#{$i}) {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  .carousel__activator:nth-of-type(#{$i}):checked
+    ~ .carousel__indicators
+    > .carousel__indicator:nth-of-type(#{$i}) {
+    opacity: 1;
+    background-color: #000;
+  }
+  .carousel__slide:nth-of-type(#{$i}) {
+    background-image: url("https://unsplash.it/"+($i*3)+"00?random");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+@keyframes showSlide {
+  from {
+    display: block;
+  }
+  to {
+    display: none;
+  }
+}
+.carousel {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel__controls {
+  display: none;
+}
+.carousel__indicators {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+  bottom: 20px;
+}
+.carousel__indicator {
+  display: block;
+  box-sizing: content-box;
+  width: 30px;
+  height: 3px;
+  margin-right: 3px;
+  margin-left: 3px;
+  cursor: pointer;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+}
+.chevron::before {
+  margin: 0.5rem;
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: "";
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0.15em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+}
+
+.chevron.right:before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.chevron.left:before {
+  left: 0.25em;
+  transform: rotate(-135deg);
+}
