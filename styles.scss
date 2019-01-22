@@ -109,7 +109,7 @@
   background-color: #fafafa;
 }
 
-@for $i from 1 through 3 {
+@for $i from 1 through 5 {
   .carousel__activator:nth-of-type(#{$i}):checked ~ .carousel__track {
     -webkit-transform: translateX(((($i)-1) * 100%));
     transform: translateX(((($i)-1) * 100%));
